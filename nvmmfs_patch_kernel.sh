@@ -100,7 +100,6 @@ else
 	
 	cp $PWD/*.c $LINUXDIR/fs/simfs/
 	cp $PWD/*.h $LINUXDIR/fs/simfs/
-	cp -r $PWD/files  $LINUXDIR/fs/simfs/
 
 	echo "Updating Kconfig........."
 	mv  $KCONFIG $KCONFIGOLD
