@@ -568,7 +568,7 @@ static int nvmm_fill_super(struct super_block *sb, void *data, int silent)
 	//create a consistency_i inode and set its mode for file
 	NVMM_SB(sb)->consistency_i = nvmm_new_inode(root_i, 0, NULL);
 	NVMM_SB(sb)->consistency_i->i_mode = cpu_to_le16(sbi->mode | S_IFREG);
-	nvmm_alloc_blocks(NVMM_SB(sb)->consistency_i, (10 * PMD_SIZE + sb->s_blocksize - 1) >> sb->s_blocksize_bits);
+	nvmm_alloc_blocks(NVMM_SB(sb)->consistency_i, (PUD_SIZE + sb->s_blocksize - 1) >> sb->s_blocksize_bits);
 
     retval = 0;  
     return retval;
